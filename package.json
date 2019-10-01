@@ -9,7 +9,10 @@
     "electron": "^6.0.10"
   },
   "dependencies": {
+    "koa": "^2.8.2",
     "macadam": "^2.0.9",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7",
     "ws": "^7.1.2"
   }
 }

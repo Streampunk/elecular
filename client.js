@@ -4,7 +4,7 @@ const macadam = require('macadam');
 let ws = new wsl('http://localhost:8080')
 let playback
 
-console.dir(macadam.getDeviceInfo()[0].outputDisplayModes);
+// console.dir(macadam.getDeviceInfo()[0].outputDisplayModes);
 
 async function init () {
   playback = await macadam.playback({

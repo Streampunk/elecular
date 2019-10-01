@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron')
-const wsl = require('ws')
+const Koa = require('koa');
+const kapp = new Koa();
 
 app.disableHardwareAcceleration()
 app.commandLine.appendSwitch('force-device-scale-factor', '1');
@@ -19,23 +20,20 @@ app.once('ready', () => {
   })
 
 	let counter = 0;
-	let wss = new wsl.Server({ port: 8080 });
-	let ws = null;
-	let sent = true;
+	let lastBuf = Buffer.alloc(8294400);
 
 	win.loadURL('https://app.singular.live/output/3KTkvd53TvQHZ95Q4Bg0Ld/Default?aspect=16:9')
 	// win.webContents.enableDeviceEmulation({ screenSize: { width: 1920, height: 1080 }, viewSize: { width: 1920, height: 1080 }});
 	win.webContents.on('paint', (event, dirty, image) => {
-    console.log(counter++, dirty, image.getBitmap().length)
-		if (ws && sent) {
-			sent = false;
-			ws.send(image.toBitmap(), () => { sent = true; });
-		}
+    console.log(counter++, dirty);
+		lastBuf = image.toBitmap();
   })
-  win.webContents.setFrameRate(50)
+  win.webContents.setFrameRate(25)
 
-	wss.on('connection', (webby) => {
-		ws = webby;
+	kapp.use(async ctx => {
+		ctx.body = lastBuf;
 	})
 
+	let server = kapp.listen(3000);
+	process.on('SIGHUP', server.close)
 })
