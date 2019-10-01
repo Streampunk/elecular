@@ -1,0 +1,15 @@
+{
+  "name": "elecular",
+  "version": "0.0.1",
+  "description": "Electron graphics renderer and forwarder.",
+  "main": "main.js",
+  "author": "Richard Cartwright",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^6.0.10"
+  },
+  "dependencies": {
+    "macadam": "^2.0.9",
+    "ws": "^7.1.2"
+  }
+}
