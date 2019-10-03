@@ -28,11 +28,12 @@ app.once('ready', () => {
 	// win.webContents.enableDeviceEmulation({ screenSize: { width: 1920, height: 1080 }, viewSize: { width: 1920, height: 1080 }});
 	win.webContents.on('paint', (event, dirty, image) => {
     console.log(counter++, dirty);
-		lastBuf = image.toBitmap();
+		lastBuf = image.toJPEG(50);
   })
   win.webContents.setFrameRate(25)
 
 	kapp.use(async ctx => {
+		ctx.type = 'image/jpeg';
 		ctx.body = lastBuf;
 	})
 

@@ -9,6 +9,7 @@
     "electron": "^6.0.10"
   },
   "dependencies": {
+    "@koa/cors": "2",
     "koa": "^2.8.2",
     "macadam": "^2.0.9",
     "request": "^2.88.0",
