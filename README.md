@@ -4,14 +4,14 @@ Experimental off-screen rendering of graphical elements from [Singular.live](htt
 
     yarn install
 
-Edit URL to load in `main.js`, then ...
+Edit URL to load in `pull.js`, then ...
 
-    yarn electron .
+    yarn electron pull.js
 
 Browse to ...
 
-    ./display/index.html
+    ./display_pull/index.html
 
 Or connect a Blackmagic device and run:
 
-    node client.js
+    node pull_client.js
