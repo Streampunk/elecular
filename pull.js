@@ -8,13 +8,15 @@ app.disableHardwareAcceleration()
 app.commandLine.appendSwitch('force-device-scale-factor', '1');
 
 let win
+const width = 1920;
+const height = 1080;
 
 app.once('ready', () => {
   win = new BrowserWindow({
 		show: false,
     frame: false,
-		width: 1920,
-		height: 1080,
+		width: width,
+		height: height,
     webPreferences: {
       offscreen: true,
       transparent: true
@@ -22,7 +24,7 @@ app.once('ready', () => {
   })
 
 	let counter = 0;
-	let lastBuf = Buffer.alloc(8294400);
+	let lastBuf = Buffer.alloc(width * 3 * height);
 
 	win.loadURL('https://app.singular.live/output/3KTkvd53TvQHZ95Q4Bg0Ld/Default?aspect=16:9')
 	// win.webContents.enableDeviceEmulation({ screenSize: { width: 1920, height: 1080 }, viewSize: { width: 1920, height: 1080 }});
