@@ -6,14 +6,14 @@
   "author": "Richard Cartwright",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^6.0.10"
+    "electron": "^6.1.10"
   },
   "dependencies": {
     "@koa/cors": "2",
-    "koa": "^2.8.2",
-    "macadam": "^2.0.9",
-    "request": "^2.88.0",
-    "request-promise-native": "^1.0.7",
-    "ws": "^7.1.2"
+    "koa": "^2.11.0",
+    "macadam": "^2.0.11",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.8",
+    "ws": "^7.2.3"
   }
 }
