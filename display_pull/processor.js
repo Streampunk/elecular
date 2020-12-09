@@ -16,7 +16,7 @@ let processor = {
       this.ctx1 = this.c1.getContext("2d");
       let self = this;
 			let oReq = new XMLHttpRequest();
-			oReq.open("GET", "http://localhost:3000", true);
+			oReq.open("GET", "http://localhost:3001", true);
 			oReq.responseType = "arraybuffer";
 
 			oReq.onload = oEvent => {

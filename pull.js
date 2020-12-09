@@ -24,7 +24,7 @@ app.once('ready', () => {
   })
 
 	let counter = 0;
-	let lastBuf = Buffer.alloc(width * 3 * height);
+	let lastBuf = Buffer.alloc(width * 4 * height);
 
 	win.loadURL('https://app.singular.live/output/3KTkvd53TvQHZ95Q4Bg0Ld/Default?aspect=16:9')
 	// win.webContents.enableDeviceEmulation({ screenSize: { width: 1920, height: 1080 }, viewSize: { width: 1920, height: 1080 }});

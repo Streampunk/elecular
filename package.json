@@ -1,19 +1,19 @@
 {
   "name": "elecular",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Electron graphics renderer and forwarder.",
   "main": "main.js",
   "author": "Richard Cartwright",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^6.1.10"
+    "electron": "^11.0.4"
   },
   "dependencies": {
-    "@koa/cors": "2",
-    "koa": "^2.11.0",
-    "macadam": "^2.0.11",
+    "@koa/cors": "3.1.0",
+    "koa": "^2.13.0",
+    "macadam": "^2.0.14",
     "request": "^2.88.2",
-    "request-promise-native": "^1.0.8",
-    "ws": "^7.2.3"
+    "request-promise-native": "^1.0.9",
+    "ws": "^7.4.1"
   }
 }
